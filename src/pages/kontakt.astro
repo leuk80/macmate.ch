@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <BaseLayout
@@ -85,12 +86,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Beschreibe dein Anliegen kurz — wir melden uns schnellstmöglich bei dir.
         </p>
 
-        <form action="/api/contact" method="POST" class="space-y-6">
-          <!-- Honeypot (Anti-Spam) -->
-          <div class="hidden" aria-hidden="true">
-            <label for="_honeypot">Dieses Feld nicht ausfüllen</label>
-            <input type="text" id="_honeypot" name="_honeypot" tabindex="-1" autocomplete="off" />
+        {success && (
+          <div class="bg-[#30D158]/10 border border-[#30D158]/30 rounded-xl p-4 mb-8 text-center">
+            <p class="text-sm font-semibold text-[#248a3d]">Nachricht erfolgreich gesendet! Wir melden uns bei dir.</p>
           </div>
+        )}
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="a49f3fb2-9395-4eb8-9ac1-746b9c59a91c" />
+          <input type="hidden" name="from_name" value="MacMate Website" />
+          <input type="hidden" name="redirect" value="https://macmate.ch/kontakt?success=true" />
+          <!-- Honeypot (Anti-Spam) -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 
           <!-- Name -->
           <div>
