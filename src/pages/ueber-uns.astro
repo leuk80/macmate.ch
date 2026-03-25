@@ -24,16 +24,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Foto Placeholder -->
         <div class="order-2 lg:order-1">
-          <!-- TODO: Persönliches Foto einfügen -->
-          <div class="aspect-[4/5] rounded-2xl bg-surface border border-border flex items-center justify-center">
-            <div class="text-center text-apple-lightgray">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3 opacity-40" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              <p class="text-sm">Foto folgt</p>
-            </div>
-          </div>
+          <img
+            src="/kim-engels.jpg"
+            alt="Kim Engels — Gründer von MacMate, Apple-Experte in Zürich"
+            class="aspect-[4/5] rounded-2xl object-cover object-top w-full"
+            width="800"
+            height="1000"
+            loading="lazy"
+          />
         </div>
 
         <!-- Text -->
