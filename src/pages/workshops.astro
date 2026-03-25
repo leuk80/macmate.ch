@@ -67,17 +67,17 @@ const nextDates = [
 ---
 
 <BaseLayout
-  title="Apple Workshops & Schulungen in Zürich"
+  title="Apple Workshops & Kurse in Zürich"
   description="Praxisnahe Apple-Workshops in Zürich: iPhone & iPad Basics, Mac-Produktivität, Sicherheit & Privacy. Für Einsteiger, Profis und Teams."
 >
   <!-- Hero -->
   <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-apple-black mb-6">
-        Apple Workshops &amp; Schulungen<br />in Zürich
+        Apple Workshops &amp; Kurse<br />in Zürich
       </h1>
       <p class="text-lg md:text-xl text-apple-gray max-w-2xl mx-auto mb-8">
-        Praxisnahe Workshops für Einsteiger, Umsteiger und Teams. Verständlich erklärt, sofort anwendbar.
+        Praxisnahe Workshops und Kurse für Einsteiger, Umsteiger und Teams. Verständlich erklärt, sofort anwendbar.
       </p>
       <a
         href="#termine"
@@ -92,9 +92,9 @@ const nextDates = [
   <!-- Workshop-Katalog -->
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Workshop-Katalog</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Unsere Kurse im Überblick</h2>
       <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
-        Wähle den Workshop, der zu dir passt — vom Einsteiger-Kurs bis zum Team-Training.
+        Wähle den passenden Kurs — vom iPhone Kurs für Einsteiger bis zum Mac Kurs für Profis und Team-Workshops.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {workshops.map((w) => (
@@ -125,9 +125,9 @@ const nextDates = [
   <!-- Formate -->
   <section class="bg-surface py-16 md:py-24">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Formate</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Kurs-Formate</h2>
       <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
-        Ob einzeln, in der Gruppe oder als Team — wir haben das passende Format für dich.
+        Ob als Einzelkurs, in der Gruppe oder als Team-Workshop — wir haben das passende Format für dich.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {formats.map((f) => (
@@ -170,11 +170,25 @@ const nextDates = [
     </div>
   </section>
 
-  <!-- Cross-Links -->
-  <section class="py-12">
-    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
-      <p class="text-apple-gray">
-        Du brauchst persönliche Hilfe mit deinem Apple-Gerät? Schau dir unseren <a href="/privatpersonen" class="text-primary hover:text-primary-dark underline">Vor-Ort-Support für Privatpersonen</a> an.
+  <!-- Hilfreiche Artikel -->
+  <section class="py-16 md:py-24 bg-surface">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Hilfreiche Artikel</h2>
+      <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
+        Tipps und Anleitungen rund um deinen Mac, dein iPhone und deine Sicherheit.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <a href="/blog/mac-sicherheit-tipps" class="rounded-2xl border border-border bg-white p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-lg text-apple-black group-hover:text-primary transition-colors">Mac Sicherheit — 8 Tipps</h3>
+          <p class="text-apple-gray text-sm leading-relaxed mt-2">So schützt du deinen Mac vor Bedrohungen — einfach und effektiv.</p>
+        </a>
+        <a href="/blog/neuer-mac-einrichten" class="rounded-2xl border border-border bg-white p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-lg text-apple-black group-hover:text-primary transition-colors">Neuen Mac einrichten — Checkliste</h3>
+          <p class="text-apple-gray text-sm leading-relaxed mt-2">Schritt für Schritt zum perfekt eingerichteten Mac.</p>
+        </a>
+      </div>
+      <p class="text-apple-gray text-center mt-8">
+        Du brauchst persönliche Hilfe? Schau dir unseren <a href="/privatpersonen" class="text-primary hover:text-primary-dark underline">Vor-Ort-Support für Privatpersonen</a> an.
         Für Unternehmen bieten wir auch <a href="/kmu" class="text-primary hover:text-primary-dark underline">Managed Apple Services</a>.
       </p>
     </div>
@@ -194,4 +208,41 @@ const nextDates = [
       </a>
     </div>
   </section>
+
+  <!-- Schema.org Course List -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Apple Workshops und Kurse in Zürich",
+    "itemListElement": [
+      {
+        "@type": "Course",
+        "name": "iPhone & iPad Basics",
+        "description": "Lerne die wichtigsten Funktionen deines iPhones oder iPads kennen.",
+        "provider": { "@type": "Organization", "name": "MacMate" },
+        "offers": { "@type": "Offer", "price": "89", "priceCurrency": "CHF" }
+      },
+      {
+        "@type": "Course",
+        "name": "Mac-Produktivität",
+        "description": "Keyboard-Shortcuts, Automator, Spotlight und mehr.",
+        "provider": { "@type": "Organization", "name": "MacMate" },
+        "offers": { "@type": "Offer", "price": "129", "priceCurrency": "CHF" }
+      },
+      {
+        "@type": "Course",
+        "name": "Sicherheit & Privacy",
+        "description": "Schütze deine Daten — Passwörter, Zwei-Faktor-Authentifizierung, sicheres Surfen.",
+        "provider": { "@type": "Organization", "name": "MacMate" },
+        "offers": { "@type": "Offer", "price": "89", "priceCurrency": "CHF" }
+      },
+      {
+        "@type": "Course",
+        "name": "Apple im Team",
+        "description": "Zusammenarbeit mit Apple-Geräten im Team.",
+        "provider": { "@type": "Organization", "name": "MacMate" },
+        "offers": { "@type": "Offer", "price": "149", "priceCurrency": "CHF" }
+      }
+    ]
+  })} />
 </BaseLayout>

@@ -69,7 +69,7 @@ const useCases = [
 ---
 
 <BaseLayout
-  title="Managed Apple Services für KMU in Zürich"
+  title="Managed Apple Services für KMU"
   description="Managed Apple Services für KMU in Zürich: Geräte-Management, Onboarding, Backup, Helpdesk. Ab CHF 29/Gerät pro Monat. Jetzt kostenloses IT-Audit anfragen."
 >
   <!-- Hero -->
@@ -83,7 +83,7 @@ const useCases = [
       </h1>
       <p class="text-lg md:text-xl font-semibold text-white/80 mb-2">Ihre Apple-IT. Unser Job.</p>
       <p class="text-lg md:text-xl text-apple-gray max-w-2xl mx-auto mb-8">
-        Managed Apple Services für KMU in Zürich — damit Sie sich aufs Business konzentrieren können.
+        Wir übernehmen Ihre Apple-IT — damit Sie sich aufs Business konzentrieren können.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -226,12 +226,29 @@ const useCases = [
     </div>
   </section>
 
-  <!-- Cross-Links -->
-  <section class="py-12">
-    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
-      <p class="text-apple-gray">
+  <!-- Hilfreiche Artikel -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Hilfreiche Artikel</h2>
+      <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
+        Erfahren Sie mehr über Apple im Unternehmenseinsatz — in unserem Blog.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/blog/apple-fuer-kmu" class="rounded-2xl border border-border bg-white p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-lg text-apple-black group-hover:text-primary transition-colors">Apple für KMU — warum sich der Umstieg lohnt</h3>
+          <p class="text-apple-gray text-sm leading-relaxed mt-2">Vorteile, Kostenvergleich und Praxistipps für den Wechsel zu Apple im Unternehmen.</p>
+        </a>
+        <a href="/blog/apple-business-plattform" class="rounded-2xl border border-border bg-white p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-lg text-apple-black group-hover:text-primary transition-colors">Apple Business — die neue All-in-One-Plattform</h3>
+          <p class="text-apple-gray text-sm leading-relaxed mt-2">Wie Apple Business Manager, MDM und Zero-Touch Deployment zusammenspielen.</p>
+        </a>
+        <a href="/blog/apple-fuer-startups" class="rounded-2xl border border-border bg-white p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-lg text-apple-black group-hover:text-primary transition-colors">Apple für Startups — der ideale Tech-Stack</h3>
+          <p class="text-apple-gray text-sm leading-relaxed mt-2">Warum immer mehr Startups auf Apple setzen und wie Sie profitieren.</p>
+        </a>
+      </div>
+      <p class="text-apple-gray text-center mt-8">
         Schulungen für Ihr Team? Entdecken Sie unsere <a href="/workshops" class="text-primary hover:text-primary-dark underline">Apple Workshops</a>.
-        Lesen Sie auch unseren Beitrag: <a href="/blog/apple-fuer-kmu" class="text-primary hover:text-primary-dark underline">Apple für KMU — warum sich der Umstieg lohnt</a>.
       </p>
     </div>
   </section>
@@ -254,4 +271,28 @@ const useCases = [
       </a>
     </div>
   </section>
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Managed Apple Services für KMU",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "MacMate",
+      "url": "https://macmate.ch"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Zürich"
+    },
+    "description": "Professionelles Apple-Gerätemanagement für KMU in Zürich. MDM, Onboarding, Support und Monitoring ab CHF 29/Gerät/Monat.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "29",
+      "highPrice": "39",
+      "priceCurrency": "CHF",
+      "unitText": "pro Gerät/Monat"
+    }
+  })} />
 </BaseLayout>

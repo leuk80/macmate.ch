@@ -1,6 +1,6 @@
 ---
-title: "Mac langsam? 5 Tipps die sofort helfen"
-description: "Dein Mac ist langsam geworden? Mit diesen 5 einfachen Tipps bringst du ihn wieder auf Touren — ohne teure Software oder Reparatur."
+title: "Mac langsam? 8 Tipps die sofort helfen"
+description: "Dein Mac ist langsam geworden? Mit diesen 8 einfachen Tipps bringst du ihn wieder auf Touren — ohne teure Software oder Reparatur."
 date: "2026-03-20"
 category: "Tipps & Tricks"
 readingTime: "6 Min. Lesezeit"

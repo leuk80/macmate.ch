@@ -3,9 +3,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Kontakt"
+  title="Apple Support Zürich kontaktieren"
   description="Kontaktiere MacMate für Apple-Support in Zürich. Per Telefon, WhatsApp, E-Mail oder Kontaktformular. Kostenlose Erstberatung."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt — MacMate Apple Support Zürich",
+    "url": "https://macmate.ch/kontakt",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "MacMate",
+      "telephone": "+41786089965",
+      "email": "hallo@macmate.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Binzallee 9",
+        "postalCode": "8055",
+        "addressLocality": "Zürich",
+        "addressCountry": "CH"
+      }
+    }
+  })} />
+
   <!-- Hero -->
   <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
@@ -21,6 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Kontaktkanäle -->
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-8">Kontaktkanäle</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <!-- Telefon -->
 <a
@@ -67,11 +88,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Erreichbarkeit -->
       <div class="text-center mb-16">
         <h2 class="text-xl font-bold text-apple-black mb-4">Erreichbarkeit</h2>
-        <div class="inline-flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-apple-gray">
+        <div class="inline-flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-apple-gray mb-4">
           <span><strong class="text-apple-black">Mo – Fr:</strong> 08:00 – 18:00</span>
           <span><strong class="text-apple-black">Sa:</strong> 09:00 – 14:00</span>
           <span><strong class="text-apple-black">Notfall:</strong> auf Anfrage</span>
         </div>
+        <p class="text-sm text-apple-gray">
+          <strong class="text-apple-black">Adresse:</strong> Binzallee 9, 8055 Zürich
+        </p>
       </div>
     </div>
   </section>

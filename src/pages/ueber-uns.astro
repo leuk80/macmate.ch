@@ -3,9 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Über uns"
+  title="Über MacMate — Apple-Experte in Zürich"
   description="Erfahre mehr über MacMate — dein persönlicher Apple-Experte in Zürich. Leidenschaft für Apple-Produkte, lokaler Service, jahrelange Erfahrung."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Über MacMate",
+    "url": "https://macmate.ch/ueber-uns",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Kim Engels",
+      "jobTitle": "Gründer & Apple-Experte",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "MacMate"
+      }
+    }
+  })} />
+
   <!-- Hero -->
   <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">

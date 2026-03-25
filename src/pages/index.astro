@@ -106,7 +106,9 @@ const testimonials = [
       "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.3769, "longitude": 8.5417 },
       "geoRadius": "30000"
     },
-    "priceRange": "CHF 69–229"
+    "priceRange": "CHF 69–229",
+    "image": "https://macmate.ch/og-image.jpg",
+    "logo": "https://macmate.ch/favicon.svg"
   })} />
 
   <!-- Hero -->
@@ -178,6 +180,34 @@ const testimonials = [
     </div>
   </section>
 
+  <!-- Warum MacMate? -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Warum MacMate?</h2>
+      <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
+        Persönlicher Apple-Support — so wie er sein sollte.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div>
+          <h3 class="font-bold text-lg text-apple-black mb-2">Lokal und persönlich</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Kein anonymes Callcenter, kein stundenlanges Warten. MacMate ist dein persönlicher Ansprechpartner für alles rund um Apple in Zürich. Wir kennen die Bedürfnisse unserer Kunden — ob Privatperson, Freelancer oder KMU — und helfen schnell, verständlich und auf Augenhöhe.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg text-apple-black mb-2">Über 25 Jahre Apple-Erfahrung</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Seit dem PowerBook 190 im Jahr 1996 arbeiten wir mit Apple-Geräten. Diese Erfahrung macht den Unterschied: Wir kennen macOS, iOS und das Apple-Ökosystem in- und auswendig — und finden für jedes Problem die richtige Lösung.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg text-apple-black mb-2">Faire Preise, keine Überraschungen</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Unsere Preise sind transparent und fair. Du weisst vorher, was es kostet — und zahlst nur, wenn wir dein Problem lösen. Keine versteckten Gebühren, keine unnötigen Reparaturen. Support ab CHF 69, Managed Services ab CHF 29/Gerät/Monat.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg text-apple-black mb-2">Schnell, wenn's drauf ankommt</h3>
+          <p class="text-apple-gray text-sm leading-relaxed">Durchschnittlich 2 Stunden Reaktionszeit. Ob vor Ort in ganz Zürich oder per Remote-Support — wir sind schnell zur Stelle. Für KMU-Kunden mit Managed-Service-Abo garantieren wir Reaktionszeiten von 2 bis 8 Stunden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- So funktioniert's -->
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
@@ -211,6 +241,7 @@ const testimonials = [
             category={post.data.category}
             readingTime={post.data.readingTime}
             slug={post.id}
+            headingLevel="h3"
           />
         ))}
       </div>

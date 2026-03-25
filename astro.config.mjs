@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://macmate.ch',
   output: 'static',
+  trailingSlash: 'never',
 
   vite: {
     plugins: [tailwindcss()],

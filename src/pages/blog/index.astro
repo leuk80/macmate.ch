@@ -15,8 +15,11 @@ const posts = (await getCollection('blog')).sort(
   <section class="py-16 md:py-24">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
       <h1 class="text-4xl md:text-5xl font-extrabold text-apple-black text-center mb-4">Apple-Tipps & Anleitungen</h1>
-      <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
+      <p class="text-apple-gray text-center max-w-xl mx-auto mb-6">
         Tipps, Anleitungen und Neuigkeiten rund um Apple — direkt aus Zürich.
+      </p>
+      <p class="text-apple-gray text-center max-w-2xl mx-auto mb-12">
+        Praxisnahe Tipps, Anleitungen und News rund um Mac, iPhone und iPad. Von Apple-Experten aus Zürich — verständlich erklärt und sofort umsetzbar.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
