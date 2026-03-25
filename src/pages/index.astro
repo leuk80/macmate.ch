@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import StepProcess from '../components/StepProcess.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
+const services = [
+  {
+    title: 'Vor-Ort-Support',
+    description: 'Wir kommen zu dir — in ganz Zürich. Persönlich, schnell, unkompliziert.',
+    href: '/privatpersonen',
+    color: '#0A84FF',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+  },
+  {
+    title: 'Remote-Support',
+    description: 'Hilfe per Fernwartung — in Minuten verbunden, sofort gelöst.',
+    href: '/privatpersonen',
+    color: '#30D158',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
+  },
+  {
+    title: 'Workshops',
+    description: 'Lerne, wie du mehr aus deinem Apple rausholst. Für Einsteiger bis Profis.',
+    href: '/workshops',
+    color: '#FF9F0A',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/></svg>',
+  },
+  {
+    title: 'Managed Services',
+    description: 'Ihre Apple-IT läuft — Sie fokussieren aufs Business. Ab CHF 29/Gerät.',
+    href: '/kmu',
+    color: '#BF5AF2',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>',
+  },
+];
+
+const steps = [
+  { number: '1', title: 'Anfrage', description: 'Ruf an, schreib per WhatsApp oder buche online.' },
+  { number: '2', title: 'Diagnose', description: 'Wir analysieren dein Problem — kostenlos.' },
+  { number: '3', title: 'Lösung', description: 'Vor Ort oder remote — schnell und fair.' },
+];
+
+const testimonials = [
+  {
+    name: 'Sarah M., Zürich',
+    quote: 'MacMate hat mein MacBook gerettet — der Techniker war in 2 Stunden da. Super professionell!',
+    badge: 'Privatperson',
+  },
+  {
+    name: 'Thomas K., Startup-Gründer',
+    quote: 'Endlich jemand, der Apple und KMU versteht. Das Managed-Service-Abo ist Gold wert.',
+    badge: 'KMU',
+  },
+  {
+    name: 'Lena W., Zürich',
+    quote: 'Meine Mutter kann jetzt ihr iPad bedienen — dank dem Workshop. Geduldig und verständlich erklärt.',
+    badge: 'Privatperson',
+  },
+];
+---
+
+<BaseLayout
+  title="Dein Apple-Experte in Zürich"
+  description="MacMate bietet Apple-Support in Zürich: Vor-Ort-Service, Remote-Hilfe, Workshops und Managed Services für KMU. Persönlich, schnell, fair."
+>
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MacMate",
+    "description": "Apple Support Service in Zürich",
+    "url": "https://macmate.ch",
+    "telephone": "+41 44 123 45 67",
+    "email": "hallo@macmate.ch",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zürich",
+      "addressRegion": "ZH",
+      "addressCountry": "CH"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.3769, "longitude": 8.5417 },
+      "geoRadius": "30000"
+    },
+    "priceRange": "CHF 69–229"
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-apple-black mb-6">
+        Dein persönlicher<br />Apple-Experte in Zürich
+      </h1>
+      <p class="text-lg md:text-xl text-apple-gray max-w-2xl mx-auto mb-8">
+        Ob Mac, iPhone oder iPad — wir lösen dein Problem. Vor Ort, remote oder im Workshop.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-dark transition-colors text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          Jetzt Termin buchen
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="#services"
+          class="inline-flex items-center justify-center gap-2 bg-white text-apple-black font-semibold px-8 py-3.5 rounded-full border border-border hover:bg-surface transition-colors text-base"
+        >
+          Unsere Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Unsere Services</h2>
+      <p class="text-apple-gray text-center max-w-xl mx-auto mb-12">
+        Von der schnellen Problemlösung bis zum Rundum-IT-Service — wir haben das passende Angebot.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="bg-surface py-12">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="flex items-center justify-center gap-1 mb-1">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF9F0A" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            ))}
+          </div>
+          <p class="font-bold text-2xl text-apple-black">4.9 / 5</p>
+          <p class="text-sm text-apple-gray">bei Google</p>
+        </div>
+        <div>
+          <p class="font-bold text-2xl text-apple-black mt-2">&#8960; 2h</p>
+          <p class="text-sm text-apple-gray">Reaktionszeit</p>
+        </div>
+        <div>
+          <p class="font-bold text-2xl text-apple-black mt-2">500+</p>
+          <p class="text-sm text-apple-gray">gelöste Fälle</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- So funktioniert's -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-12">So funktioniert's</h2>
+      <StepProcess steps={steps} />
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-12">Was unsere Kunden sagen</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <TestimonialCard {...t} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="bg-primary py-16 md:py-20">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Apple-Problem? Wir helfen.</h2>
+      <p class="text-primary-light text-lg mb-8">Kostenlose Erstberatung — ruf an, schreib uns oder buche direkt.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <!-- TODO: echte Nummer -->
+        <a
+          href="tel:+41441234567"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-full hover:bg-primary-light transition-colors"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Anrufen
+        </a>
+        <!-- TODO: echte Nummer -->
+        <a
+          href="https://wa.me/41441234567"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-full hover:bg-primary-light transition-colors"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-full hover:bg-primary-light transition-colors"
+        >
+          Termin buchen
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

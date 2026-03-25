@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Impressum — MacMate · Apple Support Zürich"
+  description="Impressum von MacMate — Apple Support Service in Zürich. Angaben gemäss Schweizer Recht (OR Art. 3 Abs. 1 lit. s UWG)."
+>
+  <section class="py-20 md:py-28">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-apple-black mb-12">Impressum</h1>
+
+        <div class="space-y-10 text-apple-gray leading-relaxed">
+          <!-- Angaben gemäss OR -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Angaben gemäss Art. 3 Abs. 1 lit. s UWG</h2>
+            <!-- TODO: Echte Angaben einfügen -->
+            <div class="space-y-1">
+              <p><strong class="text-apple-black">Firma:</strong> MacMate</p>
+              <p><strong class="text-apple-black">Inhaber:</strong> [Vorname Nachname]</p>
+              <p><strong class="text-apple-black">Adresse:</strong> [Strasse Nr.], [PLZ] Zürich</p>
+              <p><strong class="text-apple-black">E-Mail:</strong> <a href="mailto:hallo@macmate.ch" class="text-primary hover:text-primary-dark transition-colors">hallo@macmate.ch</a></p>
+              <!-- TODO: echte Nummer -->
+              <p><strong class="text-apple-black">Telefon:</strong> 044 XXX XX XX</p>
+              <!-- TODO: UID-Nummer einfügen, falls vorhanden -->
+              <p><strong class="text-apple-black">UID-Nummer:</strong> CHE-XXX.XXX.XXX</p>
+            </div>
+          </div>
+
+          <!-- Vertretungsberechtigte Person -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Vertretungsberechtigte Person</h2>
+            <!-- TODO: Echte Angaben einfügen -->
+            <p>[Vorname Nachname], Inhaber</p>
+          </div>
+
+          <!-- Haftungsausschluss -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Haftungsausschluss</h2>
+            <p class="mb-3">
+              Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.
+            </p>
+            <p class="mb-3">
+              Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.
+            </p>
+            <p>
+              Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+            </p>
+          </div>
+
+          <!-- Haftungsausschluss für Links -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Haftungsausschluss für Links</h2>
+            <p>
+              Verweise und Links auf Websites Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Websites abgelehnt. Der Zugriff und die Nutzung solcher Websites erfolgen auf eigene Gefahr des jeweiligen Nutzers.
+            </p>
+          </div>
+
+          <!-- Urheberrecht -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Urheberrecht</h2>
+            <p class="mb-3">
+              Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich MacMate oder den speziell genannten Rechteinhabern.
+            </p>
+            <p>
+              Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung des Urheberrechtsträgers im Voraus einzuholen.
+            </p>
+          </div>
+
+          <!-- Hinweis zu Apple -->
+          <div>
+            <h2 class="text-xl font-bold text-apple-black mb-4">Markenhinweis</h2>
+            <p>
+              Apple, Mac, MacBook, iPhone, iPad und weitere Produktnamen sind eingetragene Marken der Apple Inc. MacMate ist kein autorisierter Apple-Händler oder -Serviceanbieter und steht in keiner geschäftlichen Verbindung zu Apple Inc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

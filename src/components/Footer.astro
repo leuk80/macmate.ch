@@ -1,0 +1,56 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-apple-black text-white">
+  <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 font-bold text-xl mb-4">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#0A84FF"/>
+            <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          MacMate
+        </div>
+        <p class="text-apple-lightgray text-sm mb-4">Dein Apple-Experte in Zürich</p>
+        <ul class="space-y-2 text-sm text-apple-lightgray">
+          <!-- TODO: echte Nummer -->
+          <li>
+            <a href="tel:+41441234567" class="hover:text-white transition-colors">044 123 45 67</a>
+          </li>
+          <li>
+            <a href="mailto:hallo@macmate.ch" class="hover:text-white transition-colors">hallo@macmate.ch</a>
+          </li>
+          <li>Zürich</li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider mb-4">Services</h3>
+        <ul class="space-y-2 text-sm text-apple-lightgray">
+          <li><a href="/privatpersonen" class="hover:text-white transition-colors">Privatpersonen</a></li>
+          <li><a href="/kmu" class="hover:text-white transition-colors">KMU</a></li>
+          <li><a href="/workshops" class="hover:text-white transition-colors">Workshops</a></li>
+          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="font-semibold text-sm uppercase tracking-wider mb-4">Rechtliches</h3>
+        <ul class="space-y-2 text-sm text-apple-lightgray">
+          <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-10 pt-6 text-center text-sm text-apple-lightgray">
+      &copy; {year} MacMate &middot; Zürich
+    </div>
+  </div>
+</footer>

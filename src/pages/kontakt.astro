@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Kontakt — MacMate · Apple Support Zürich"
+  description="Kontaktiere MacMate für Apple-Support in Zürich. Per Telefon, WhatsApp, E-Mail oder Kontaktformular. Kostenlose Erstberatung."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-apple-black mb-6">
+        Wir sind für dich da
+      </h1>
+      <p class="text-lg md:text-xl text-apple-gray max-w-2xl mx-auto">
+        Ruf an, schreib uns oder füll das Formular aus — wir melden uns schnellstmöglich.
+      </p>
+    </div>
+  </section>
+
+  <!-- Kontaktkanäle -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <!-- Telefon -->
+        <!-- TODO: echte Nummer einfügen -->
+        <a
+          href="tel:+41441234567"
+          class="group rounded-2xl border border-border bg-white p-8 text-center hover:shadow-lg hover:border-primary transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <div class="w-16 h-16 rounded-full bg-primary-light flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-apple-black mb-1">Telefon</h3>
+          <!-- TODO: echte Nummer -->
+          <p class="text-primary font-semibold">044 XXX XX XX</p>
+          <p class="text-sm text-apple-lightgray mt-2">Direkt anrufen</p>
+        </a>
+
+        <!-- WhatsApp -->
+        <!-- TODO: echte Nummer einfügen -->
+        <a
+          href="https://wa.me/41XXXXXXXXX"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-2xl border border-border bg-white p-8 text-center hover:shadow-lg hover:border-[#25D366] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center text-[#25D366] mx-auto mb-4 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-apple-black mb-1">WhatsApp</h3>
+          <p class="text-[#25D366] font-semibold">Nachricht senden</p>
+          <p class="text-sm text-apple-lightgray mt-2">Schnelle Antwort</p>
+        </a>
+
+        <!-- E-Mail -->
+        <a
+          href="mailto:hallo@macmate.ch"
+          class="group rounded-2xl border border-border bg-white p-8 text-center hover:shadow-lg hover:border-primary transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <div class="w-16 h-16 rounded-full bg-primary-light flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <h3 class="font-bold text-lg text-apple-black mb-1">E-Mail</h3>
+          <p class="text-primary font-semibold">hallo@macmate.ch</p>
+          <p class="text-sm text-apple-lightgray mt-2">Wir antworten innert 24h</p>
+        </a>
+      </div>
+
+      <!-- Erreichbarkeit -->
+      <div class="text-center mb-16">
+        <h2 class="text-xl font-bold text-apple-black mb-4">Erreichbarkeit</h2>
+        <div class="inline-flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-apple-gray">
+          <span><strong class="text-apple-black">Mo – Fr:</strong> 08:00 – 18:00</span>
+          <span><strong class="text-apple-black">Sa:</strong> 09:00 – 14:00</span>
+          <span><strong class="text-apple-black">Notfall:</strong> auf Anfrage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontaktformular -->
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-apple-black text-center mb-4">Schreib uns</h2>
+        <p class="text-apple-gray text-center mb-12">
+          Beschreibe dein Anliegen kurz — wir melden uns schnellstmöglich bei dir.
+        </p>
+
+        <form action="/api/contact" method="POST" class="space-y-6">
+          <!-- Honeypot (Anti-Spam) -->
+          <div class="hidden" aria-hidden="true">
+            <label for="_honeypot">Dieses Feld nicht ausfüllen</label>
+            <input type="text" id="_honeypot" name="_honeypot" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-semibold text-apple-black mb-2">Name <span class="text-[#FF453A]">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              class="w-full rounded-xl border border-border bg-white px-4 py-3 text-apple-black placeholder:text-apple-lightgray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
+              placeholder="Dein Name"
+            />
+          </div>
+
+          <!-- E-Mail -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-apple-black mb-2">E-Mail <span class="text-[#FF453A]">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="w-full rounded-xl border border-border bg-white px-4 py-3 text-apple-black placeholder:text-apple-lightgray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
+              placeholder="deine@email.ch"
+            />
+          </div>
+
+          <!-- Telefon -->
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-apple-black mb-2">Telefon <span class="text-apple-lightgray font-normal">(optional)</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              class="w-full rounded-xl border border-border bg-white px-4 py-3 text-apple-black placeholder:text-apple-lightgray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
+              placeholder="044 XXX XX XX"
+            />
+          </div>
+
+          <!-- Anliegen -->
+          <div>
+            <label for="subject" class="block text-sm font-semibold text-apple-black mb-2">Anliegen <span class="text-[#FF453A]">*</span></label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full rounded-xl border border-border bg-white px-4 py-3 text-apple-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow appearance-none bg-no-repeat bg-right"
+              style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2386868B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E&quot;); background-position: right 1rem center;"
+            >
+              <option value="" disabled selected>Bitte wählen</option>
+              <option value="privat-support">Privat-Support</option>
+              <option value="kmu-anfrage">KMU-Anfrage</option>
+              <option value="workshop">Workshop</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <!-- Nachricht -->
+          <div>
+            <label for="message" class="block text-sm font-semibold text-apple-black mb-2">Nachricht <span class="text-[#FF453A]">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              class="w-full rounded-xl border border-border bg-white px-4 py-3 text-apple-black placeholder:text-apple-lightgray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-y"
+              placeholder="Beschreibe dein Anliegen kurz..."
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button
+              type="submit"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-dark transition-colors text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              Nachricht senden
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,111 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/privatpersonen', label: 'Für Privatpersonen' },
+  { href: '/kmu', label: 'Für KMU' },
+  { href: '/workshops', label: 'Workshops' },
+  { href: '/ueber-uns', label: 'Über uns' },
+  { href: '/blog', label: 'Blog' },
+];
+---
+
+<header
+  id="main-nav"
+  class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border transition-all duration-300"
+>
+  <nav class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 font-bold text-xl text-apple-black">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="6" fill="#0A84FF"/>
+        <path d="M8 14l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      MacMate
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-6">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              'text-sm font-medium transition-colors hover:text-primary',
+              currentPath === href || currentPath.startsWith(href + '/')
+                ? 'text-primary'
+                : 'text-apple-gray',
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Desktop CTA -->
+    <a
+      href="/kontakt"
+      class="hidden lg:inline-flex items-center gap-1.5 bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-dark transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    >
+      Termin buchen
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden p-2 -mr-2 text-apple-black"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg id="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-border bg-white">
+    <div class="px-4 py-4 space-y-1">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+            currentPath === href || currentPath.startsWith(href + '/')
+              ? 'text-primary bg-primary-light'
+              : 'text-apple-black hover:bg-surface',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        href="/kontakt"
+        class="block mt-3 text-center bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-dark transition-colors"
+      >
+        Termin buchen
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Menü schliessen' : 'Menü öffnen');
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+  });
+</script>

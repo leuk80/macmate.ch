@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  duration: string;
+  price: string;
+  description: string;
+  featured?: boolean;
+}
+
+const { name, duration, price, description, featured = false } = Astro.props;
+---
+
+<div class:list={[
+  'rounded-2xl border p-6 flex flex-col',
+  featured ? 'border-primary bg-primary-light shadow-lg ring-2 ring-primary' : 'border-border bg-white',
+]}>
+  {featured && <span class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Beliebt</span>}
+  <h3 class="font-bold text-lg text-apple-black">{name}</h3>
+  <p class="text-apple-gray text-sm mt-1">{duration}</p>
+  <div class="mt-4 mb-4">
+    <span class="font-mono font-bold text-3xl text-apple-black">{price}</span>
+  </div>
+  <p class="text-apple-gray text-sm leading-relaxed flex-1">{description}</p>
+  <a
+    href="/kontakt"
+    class:list={[
+      'mt-6 block text-center text-sm font-semibold px-5 py-2.5 rounded-full transition-colors',
+      featured
+        ? 'bg-primary text-white hover:bg-primary-dark'
+        : 'bg-surface text-apple-black hover:bg-border',
+    ]}
+  >
+    Termin buchen
+  </a>
+</div>

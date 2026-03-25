@@ -1,0 +1,25 @@
+---
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {steps.map((step) => (
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
+        {step.number}
+      </div>
+      <h3 class="font-bold text-lg text-apple-black mb-2">{step.title}</h3>
+      <p class="text-apple-gray text-sm leading-relaxed">{step.description}</p>
+    </div>
+  ))}
+</div>
