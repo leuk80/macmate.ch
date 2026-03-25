@@ -28,7 +28,7 @@ const formattedDate = new Date(date).toLocaleDateString('de-CH', {
       <span class="text-xs font-semibold text-primary bg-primary-light px-2.5 py-1 rounded-full">{category}</span>
       <span class="text-xs text-apple-lightgray">{readingTime}</span>
     </div>
-    <h3 class="font-bold text-lg text-apple-black mb-2 group-hover:text-primary transition-colors">{title}</h3>
+    <h2 class="font-bold text-lg text-apple-black mb-2 group-hover:text-primary transition-colors">{title}</h2>
     <p class="text-apple-gray text-sm leading-relaxed mb-3">{description}</p>
     <time class="text-xs text-apple-lightgray" datetime={date}>{formattedDate}</time>
   </div>

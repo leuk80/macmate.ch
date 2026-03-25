@@ -20,7 +20,25 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('de-CH', {
 });
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description} ogType="article">
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "datePublished": post.data.date,
+    "author": {
+      "@type": "Person",
+      "name": "Kim Engels",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MacMate",
+    },
+    "url": Astro.url.href,
+  })} />
+
   <article class="py-16 md:py-24">
     <div class="mx-auto max-w-[720px] px-4 sm:px-6">
       <div class="mb-8">

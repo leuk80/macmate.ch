@@ -4,6 +4,7 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description,
   canonical = Astro.url.href,
   ogImage = '/og-image.jpg',
+  ogType = 'website',
 } = Astro.props;
 
 const fullTitle = `${title} — MacMate · Apple Support Zürich`;
@@ -28,7 +30,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
 <meta property="og:image" content={ogImageUrl} />
 <meta property="og:url" content={canonical} />
 <meta property="og:locale" content="de_CH" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content="MacMate" />
 
 <!-- Twitter -->

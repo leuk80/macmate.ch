@@ -61,10 +61,24 @@ const faqItems = [
 ---
 
 <BaseLayout
-  title="Apple-Support für Privatpersonen — MacMate · Apple Support Zürich"
+  title="Apple-Support für Privatpersonen in Zürich"
   description="Persönlicher Apple-Support bei dir zu Hause in Zürich. Mac langsam, iCloud voll, Daten umziehen — wir helfen schnell, verständlich und fair. Ab CHF 69."
   canonical="https://macmate.ch/privatpersonen"
 >
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  })} />
+
   <!-- Hero -->
   <section class="bg-gradient-to-b from-primary-light to-white py-20 md:py-28">
     <div class="mx-auto max-w-[var(--container-content)] px-4 sm:px-6 text-center">

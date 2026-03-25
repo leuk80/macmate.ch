@@ -10,9 +10,10 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
 }
 
-const { title, description, canonical, ogImage } = Astro.props;
+const { title, description, canonical, ogImage, ogType } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,11 +22,13 @@ const { title, description, canonical, ogImage } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SeoHead title={title} description={description} canonical={canonical} ogImage={ogImage} />
+    <SeoHead title={title} description={description} canonical={canonical} ogImage={ogImage} ogType={ogType} />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/PlusJakartaSans-Regular.woff2" crossorigin />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Inhalt springen</a>
     <Nav />
-    <main class="flex-1 pt-16">
+    <main id="main-content" class="flex-1 pt-16">
       <slot />
     </main>
     <Footer />
