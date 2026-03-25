@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <BaseLayout
@@ -86,16 +85,16 @@ const success = Astro.url.searchParams.get('success') === 'true';
           Beschreibe dein Anliegen kurz — wir melden uns schnellstmöglich bei dir.
         </p>
 
-        {success && (
-          <div class="bg-[#30D158]/10 border border-[#30D158]/30 rounded-xl p-4 mb-8 text-center">
-            <p class="text-sm font-semibold text-[#248a3d]">Nachricht erfolgreich gesendet! Wir melden uns bei dir.</p>
-          </div>
-        )}
+        <div id="form-success" class="bg-[#30D158]/10 border border-[#30D158]/30 rounded-xl p-4 mb-8 text-center hidden">
+          <p class="text-sm font-semibold text-[#248a3d]">Nachricht erfolgreich gesendet! Wir melden uns bei dir.</p>
+        </div>
+        <div id="form-error" class="bg-[#FF453A]/10 border border-[#FF453A]/30 rounded-xl p-4 mb-8 text-center hidden">
+          <p class="text-sm font-semibold text-[#FF453A]">Ein Fehler ist aufgetreten. Bitte versuche es erneut.</p>
+        </div>
 
-        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <form id="contact-form" class="space-y-6">
           <input type="hidden" name="access_key" value="a49f3fb2-9395-4eb8-9ac1-746b9c59a91c" />
           <input type="hidden" name="from_name" value="MacMate Website" />
-          <input type="hidden" name="redirect" value="https://macmate.ch/kontakt?success=true" />
           <!-- Honeypot (Anti-Spam) -->
           <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 
@@ -185,4 +184,42 @@ const success = Astro.url.searchParams.get('success') === 'true';
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successEl?.classList.add('hidden');
+      errorEl?.classList.add('hidden');
+
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Wird gesendet...';
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+
+        if (res.ok) {
+          successEl?.classList.remove('hidden');
+          form.reset();
+          successEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error();
+        }
+      } catch {
+        errorEl?.classList.remove('hidden');
+        errorEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
+  </script>
 </BaseLayout>
