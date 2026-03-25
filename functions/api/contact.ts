@@ -47,12 +47,11 @@ export const onRequestPost: PagesFunction = async (context) => {
     }
 
     // Send via Web3Forms (Free: 250 emails/month)
-    // TODO: Replace with actual Web3Forms access key
     const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace with real key
+        access_key: 'a49f3fb2-9395-4eb8-9ac1-746b9c59a91c',
         name: data.name,
         email: data.email,
         phone: data.phone || 'Nicht angegeben',
